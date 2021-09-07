@@ -2,6 +2,13 @@ html {
     background-color: lightblue;
     /* max-width: 1200px; */
 }
+
+footer {
+  background-image: url("static/women_in_tech.png");
+  height: 200px;
+  bottom: 1mm;
+}
+
 #primary {
     display: grid;
     grid-template-columns: 0% 100%;

@@ -1,5 +1,7 @@
 import express from 'express';
-import { peopleData } from './fixtures/people.js';
+import peopleRouter from './routes/people.js'
+
+// import { peopleData } from './fixtures/people.js';
 import { imageData } from './fixtures/images.js';
 import { userData } from './fixtures/users.js';
 
@@ -12,24 +14,26 @@ app.listen(3000, () => {
     console.log('Server started!')
 });
 
-app.get('/', (req, res) => {
-    // res.send('Hello, world!')
-    console.log(peopleData);
-    res.render('index', { people: peopleData });
-});
+app.use('/', peopleRouter)
 
-app.get('/profile/:id', (req,res) => {
-    let personId = req.params.id;
-    let person;
-    peopleData.forEach((personData) => {
-        if (personData.id == personId) {
-            person = personData;
-        }
-    })
-    console.log(person);
-    res.render('profile', { person: person});
+// app.get('/', (req, res) => {
+//     // res.send('Hello, world!')
+//     console.log(peopleData);
+//     res.render('index', { people: peopleData });
+// });
 
-});
+// app.get('/profile/:id', (req,res) => {
+//     let personId = req.params.id;
+//     let person;
+//     peopleData.forEach((personData) => {
+//         if (personData.id == personId) {
+//             person = personData;
+//         }
+//     })
+//     console.log(person);
+//     res.render('profile', { person: person});
+
+// });
 
 
 app.get('/images/:id',(req,res) => {
