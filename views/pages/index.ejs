@@ -1,0 +1,28 @@
+<%- include("../partials/_head") -%>
+            <!-- <script src="views/pages/slides.js"></script> -->
+
+
+            <%- include("../partials/_hero") -%>
+            <h1>Women in Tech</h1>
+            <div id="main">
+                <div id="left-container"></div>
+                <div id="right-container">
+                    <div class = "grid-container">
+                    <% people.forEach(person => { %>
+                        <div id="profile-<%=person.id %>" class="profiles">
+                        <a href="/profile/<%= person.id %>">
+                        <img class="photo" id="profile-pic-<%=person.id %>" src="<%= person.photo %>"></img>
+                        </a>
+                            <p><%= person.name %></p>
+                    </div>
+                    <% }) %>
+                    </div>
+                </div>       
+            </div>
+            <%- include("../partials/_block") -%>
+            <%- include("../partials/_slider") -%>
+  
+
+<%- include("../partials/_footer") -%>
+
+

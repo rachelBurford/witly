@@ -1,0 +1,18 @@
+<div class = "slideshow-container">
+    <% people.forEach(person => { %>
+        <div class="mySlides fade">
+            <div class="numbertext"><%=person.id %></div>
+            <img class="photos" src="<%= person.photo %>" style="width:30%">
+            <div class="text"><%=person.name %></div>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<% }) %>
+<br>
+<div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+<script src='slides.js'></script>
