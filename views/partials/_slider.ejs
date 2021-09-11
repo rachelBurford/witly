@@ -1,26 +1,30 @@
-<img id="content-image" src="/images/dark_panel.png">
-<h1 id="history">Women in Tech - The Pioneers</h1>
-<div class = "slideshow-container">
-    <% people.forEach(person => { %>
-        <div class="mySlides fade">
-            <div class="numbertext"><%=person.id %></div>
-            <img class="photos" src="<%= person.photo %>">
-            <div>
-            <h3 class="text"><%=person.name %></h3 style="color:white">
+<div id="bio-container">
+
+    <div><img id="content-image" src="/images/dark_panel.png"></div>
+    <div><h1 class="float-left" id="history">Women in Tech - The Pioneers</h1></div>
+    <div id="slides" class="slideshow-container">
+        <% people.forEach(person => { %>
+            <div class="mySlides fade">
+                <div class="numbertext"><%=person.id %></div>
+                <a href="/profile/<%= person.id %>">
+                <img class="photos" onerror="onError()" src="<%= person.photo %>">
+                </a>
+                <div>
+                <h3 class="text"><%=person.name %></h3 style="color:white">
+                </div>
             </div>
-        </div>
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
-<% }) %>
-<br>
-<div style="text-align:center">
-    <span class="dot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-    <span class="dot" onclick="currentSlide(3)"></span>
-    <span class="dot" onclick="currentSlide(4)"></span>
-    <span class="dot" onclick="currentSlide(5)"></span>
-
-</div>
+    <% }) %>
+    <br>
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+    </div>
+    </div>
 </div>
 <script src='slides.js'></script>

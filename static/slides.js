@@ -26,3 +26,11 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 }
+
+function onError() {
+  console.log("failed");
+  var errorImage = document.getElementById("slides");
+  var link = document.getElementById("bio-container");
+  link.classList.add("errorStateHidden");
+
+}
