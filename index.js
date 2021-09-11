@@ -1,7 +1,7 @@
 import express from 'express';
 import peopleRouter from './routes/people.js'
 
-// import { peopleData } from './fixtures/people.js';
+
 import { imageData } from './fixtures/images.js';
 import { userData } from './fixtures/users.js';
 
@@ -9,6 +9,7 @@ const app = express();
 app.use(express.static('static'))
 app.set('view engine', 'ejs');
 app.set('views', './views/pages/');
+app.use( express.static('public'));
 
 app.listen(3000, () => {
     console.log('Server started!')
@@ -36,18 +37,18 @@ app.use('/', peopleRouter)
 // });
 
 
-app.get('/images/:id',(req,res) => {
-    let imageId = req.params.id;
-    let data;
-    imageData.every((dataData) => {
-        if (dataData.id == imageId) {
-            data = dataData;
-            return false;
-        }
-    });
-    res.render('images', { data: data});
+// app.get('/images/:id',(req,res) => {
+//     let imageId = req.params.id;
+//     let data;
+//     imageData.every((dataData) => {
+//         if (dataData.id == imageId) {
+//             data = dataData;
+//             return false;
+//         }
+//     });
+//     res.render('images', { data: data});
 
-});
+// });
 
 app.get('/login/:id', (req, res) => {
     let userId = req.params.id;

@@ -1,4 +1,4 @@
-import { peopleData } from '../fixtures/people.js';
+// import { peopleData } from '../fixtures/people.js';
 import fetch from 'node-fetch';
 import dotenv from 'dotenv';
 
@@ -24,11 +24,20 @@ export const fetchPeople = async function (name) {
 }
 
 export const fetchPerson = function (personId) { 
-    let person;
-    peopleData.forEach((personData) => {
-        if (personData.id == personId) {
-            person = personData;
+    // const query = `?id=${personId}`;
+    const url = `${API_URL}people/${personId}`;
+    console.log(url);
+    return fetch(url, {
+        headers: {
+            Authorization: `Token ${API_KEY}`
+        },
+    }).then(function(res) { 
+        if (res.status == 401) {
+            return;
         }
-    });
-    return person;
+        return res.json();
+    }).then(function(res){
+        console.log(res);
+        return res; 
+    }).catch();
 }

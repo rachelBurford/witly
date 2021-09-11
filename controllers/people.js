@@ -14,8 +14,10 @@ export const fetchPeopleController = async function (req, res) {
 }
 
 
-export const fetchPersonController = function (req,res) {
+export const fetchPersonController = async function (req,res) {
     const personId = req.params.id;
-    const personData = fetchPerson(personId);
+    const personData = await fetchPerson(personId);
+    console.log(personId);
+    console.log(personData);
     res.render('profile', { person: personData })
 }

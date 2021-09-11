@@ -1,15 +1,17 @@
 <%- include("../partials/_head") -%>
             <!-- <script src="views/pages/slides.js"></script> -->
-
-
-            <%- include("../partials/_hero") -%>
-            <h1>Women in Tech</h1>
-
             <form id="search-form" action="/" method="GET">
                 <input name="name" id="name-query" type="text" /> 
                 <input type="submit" value="search" />            
             </form>
 
+            <%- include("../partials/_hero") -%>
+            <div class="centered">Centered</div>
+            </div>
+
+            <a id="float" href="#history">History of Women in Tech</a>
+            <h1 id="history">A History of Women in Tech</h1>
+            <%- include("../partials/_slider") -%>
 
             <div id="main">
                 <div id="left-container"></div>
@@ -27,7 +29,7 @@
                 </div>       
             </div>
             <%- include("../partials/_block") -%>
-            <%- include("../partials/_slider") -%>
+
   
 
 <%- include("../partials/_footer") -%>
