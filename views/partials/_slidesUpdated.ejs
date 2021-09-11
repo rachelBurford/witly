@@ -1,17 +1,14 @@
-<img id="content-image" src="/images/dark_panel.png">
 <h1 id="history">Women in Tech - The Pioneers</h1>
 <div class = "slideshow-container">
     <% people.forEach(person => { %>
         <div class="mySlides fade">
             <div class="numbertext"><%=person.id %></div>
             <img class="photos" src="<%= person.photo %>">
-            <div>
-            <h3 class="text"><%=person.name %></h3 style="color:white">
-            </div>
+            <div class="text"><%=person.name %></div>
         </div>
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
+</div>
 <% }) %>
 <br>
 <div style="text-align:center">
@@ -22,5 +19,4 @@
     <span class="dot" onclick="currentSlide(5)"></span>
 
 </div>
-</div>
-<script src='slides.js'></script>
+<script src='slidesUpdated.js'></script>
