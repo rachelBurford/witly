@@ -46,3 +46,17 @@ html {
     height: 100px;
     width: 100%;
 }
+
+#bio-header h1 {
+  color: aliceblue;
+}
+
+h1 {
+  color: azure;
+}
+
+form {
+  display: flex;
+  color: beige;
+  width: 500px;
+}
