@@ -1,5 +1,6 @@
 import express from 'express';
 import peopleRouter from './routes/people.js'
+import userRouter from './routes/users.js'
 
 
 import { imageData } from './fixtures/images.js';
@@ -16,6 +17,7 @@ app.listen(3000, () => {
 });
 
 app.use('/', peopleRouter)
+app.use('/', userRouter)
 
 // app.get('/', (req, res) => {
 //     // res.send('Hello, world!')
