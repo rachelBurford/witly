@@ -1,23 +1,13 @@
 @import "slides.css";
 @import "nav.css";
+@import "footer.css";
 
 html {
     background-color: black;
     /* max-width: 1200px; */
 }
-
-#footer-container {
-  height: 200px;
-  bottom: 1mm;
-
-}
-
-#footer-image {
-  background-position: center;
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-  position: relative;
+h1, h2, h3 {
+  color: aliceblue;
 }
 
 #primary {

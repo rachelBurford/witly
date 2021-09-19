@@ -5,26 +5,28 @@
     <div id="slides" class="slideshow-container">
         <% people.forEach(person => { %>
             <div class="mySlides fade">
-                <div class="numbertext"><%=person.id %></div>
                 <a href="/profile/<%= person.id %>">
                 <img class="photos" onerror="onError()" src="<%= person.photo %>">
                 </a>
                 <div>
-                <h3 class="text"><%=person.name %></h3 style="color:white">
+                    <h3 class="text"><%=person.name %></h3 style="color:white">
+                </div>
+                <div id="control-buttons">
+                    <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+                    <button class="next" onclick="plusSlides(1)">&#10095;</button>
                 </div>
             </div>
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
 
     <% }) %>
     <br>
-    <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-        <span class="dot" onclick="currentSlide(4)"></span>
-        <span class="dot" onclick="currentSlide(5)"></span>
-    </div>
+
+        <!-- <div style="text-align:center">
+            <% people.forEach(person => { %>
+            <button class="dot" onclick="currentSlide(+1)"></button>
+
+        </div>
+        <% }) %> -->
     </div>
 </div>
 <script src='slides.js'></script>

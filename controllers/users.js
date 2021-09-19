@@ -1,3 +1,4 @@
+import { request } from 'express';
 import { createUser } from '../models/users.js';
 
 export const createUserFormController = function (req, res) {
@@ -5,9 +6,9 @@ export const createUserFormController = function (req, res) {
 };
 
 export const createUserController = async function (req, res) {
+    console.log(req.body);
     let userData = req.body;
     const user = await createUser(userData);
-    console.log(user);
     return res.render('login');
 };
 
