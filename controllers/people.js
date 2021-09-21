@@ -17,12 +17,6 @@ export const fetchPeopleController = async function (req, res) {
     console.log(req.query);
     const peopleData = await fetchPeople(name);
     if (peopleData) {
-        res.render('index', {people: peopleData})
-    } else {
-        res.send("Not Authorised")
-    }
-    const peopleData = await fetchPeople(name);
-    if (peopleData) {
         res.render('index', {
             people: peopleData,
             user: user,
