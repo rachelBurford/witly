@@ -9,7 +9,7 @@ export const createUser = async function (user) {
         let password = user.password;
 
         const saltRounds = 10;
-        const has = await bcrypt.hash(password, saltRounds);
+        const hash = await bcrypt.hash(password, saltRounds);
         let values = [user.username, hash];
         let result = await pool.query(sql, values);
     } catch (error) {

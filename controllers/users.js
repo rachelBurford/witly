@@ -6,11 +6,13 @@ export const createUserFormController = function (req, res) {
 };
 
 export const createUserController = async function (req, res) {
-    console.log(req.body);
     let userData = req.body;
     const user = await createUser(userData);
     return res.render('login');
 };
 
+export const loginFormController = function (req, res) {
+    return res.render('login');
+};
 
 
