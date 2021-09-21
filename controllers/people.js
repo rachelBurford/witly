@@ -5,6 +5,15 @@ import { fetchPerson , fetchPeople, createPerson } from "../api/people.js";
 
 export const fetchPeopleController = async function (req, res) {
     const name = req.query.name;
+    let user;
+    if (req.isAuthenticated()) {
+        user = {
+            id: req.user.rows[0].id,
+            username: req.user.rows[0].username,
+        };
+    } else {
+        user = null;
+    }
     console.log(req.query);
     const peopleData = await fetchPeople(name);
     if (peopleData) {
@@ -12,8 +21,16 @@ export const fetchPeopleController = async function (req, res) {
     } else {
         res.send("Not Authorised")
     }
-    
-}
+    const peopleData = await fetchPeople(name);
+    if (peopleData) {
+        res.render('index', {
+            people: peopleData,
+            user: user,
+        });
+    } else {
+        res.send('Not authorized.');
+    }
+};
 
 
 export const fetchPersonController = async function (req, res) {
