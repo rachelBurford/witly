@@ -4,6 +4,7 @@
 
 html {
     background-color: black;
+    scroll-behavior: smooth;
     /* max-width: 1200px; */
 }
 h1, h2, h3 {
@@ -56,6 +57,7 @@ form {
 }
 
 #pp-hero {
+  min-height: 500px;
   position: fixed;
   left: 50px;
   bottom: 150px;
