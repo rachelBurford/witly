@@ -1,17 +1,15 @@
 <%- include("../partials/_head") -%>
     <div id="bio-header">
-        <h1>Profile page</h1>
-        <h1>Women in Tech</h1>
-        
     </div>
     <div id="bio-section">
         <h2> </h2>
 
         <div id="primary">
+            <img id="pp-hero" src="<%= person.photo %>">
             <img src="/images/blue_panel.png">
             <h1 class="float-right" class="white"><%= person.name %></h1>
         </div>
 
-        <%- include("../partials/_block") -%>
+<%- include("../partials/_block") -%>
 
-        <%- include("../partials/_footer") -%>
+<%- include("../partials/_footer") -%>

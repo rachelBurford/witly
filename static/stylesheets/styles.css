@@ -54,3 +54,10 @@ form {
   color: beige;
   width: 500px;
 }
+
+#pp-hero {
+  position: fixed;
+  left: 50px;
+  bottom: 150px;
+
+}
