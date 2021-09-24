@@ -21,6 +21,18 @@ h1, h2, h3 {
   color: #717171; 
 }
 
+.photo-block {
+  position: absolute;
+  bottom: 125px;
+  right: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#pp-hero {
+  height: 375px;
+}
+
 .float-right {
   position: absolute;
   top: 50%;
@@ -56,10 +68,27 @@ form {
   width: 500px;
 }
 
-#pp-hero {
-  min-height: 500px;
-  position: fixed;
-  left: 50px;
-  bottom: 150px;
-
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
 }
+
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
