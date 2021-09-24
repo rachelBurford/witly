@@ -10,6 +10,10 @@ h1, h2, h3 {
   color: aliceblue;
 }
 
+.white {
+  color: aliceblue;
+}
+
 #primary {
   position: relative;
   text-align: center;

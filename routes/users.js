@@ -16,5 +16,9 @@ router.post(
         failureRedirect: '/login',}),
         loginFormController
 );
+router.get('/logout', function (req, res) {
+        req.logout();
+        res.redirect('/');
+});
 
 export default router;
