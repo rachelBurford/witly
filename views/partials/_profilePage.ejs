@@ -8,13 +8,13 @@
         <div class = "photo-block">
             <img id="pp-hero" src="<%= person.photo %>">
         </div>
-        <h1 class="float-left" class="white"><%= person.name %></h1>
-    
-
-    <button type="button" id="collapsible">Read more about <%= person.name %></button>
-        <div id="content">
-            <h3><%= person.tagline %></h3>
-            <h4><%= person.bio %></h4>
+        <div class="float-left" class="white">
+            <h1><%= person.name %></h1>
+            <button type="button" id="collapsible">Read more about <%= person.name %></button>
+            <div id="content">
+                <h3><%= person.tagline %></h3>
+                <h4><%= person.bio %></h4>
+            </div>
         </div>
     </div>    
 </div>
