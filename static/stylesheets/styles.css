@@ -58,17 +58,13 @@ h1, h2, h3 {
   color: aliceblue;
 }
 
-h1 {
-  color: azure;
-}
-
 form {
   display: flex;
   color: beige;
   width: 500px;
 }
 
-.collapsible {
+#collapsible {
   background-color: #eee;
   color: #444;
   cursor: pointer;
@@ -80,11 +76,10 @@ form {
   font-size: 15px;
 }
 
-.active, .collapsible:hover {
+.active, #collapsible:hover {
   background-color: #ccc;
 }
 
-/* Style the collapsible content. Note: hidden by default */
 .content {
   padding: 0 18px;
   display: none;
