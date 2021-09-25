@@ -1,12 +1,20 @@
 <%- include("../partials/_head") -%>
-
-
+<%- include("../partials/_headExtra") -%>
 
             <%- include("../partials/_hero") -%>
            
             <%- include("../partials/_block") -%>
             
             <%- include("../partials/_slider") -%>
+
+            <% if (user !== null) { %>
+                <p class="white">You are logged in as <%- user.username %></p> 
+                <a href="../profile">Add to our blog </a>
+                <% } else { %>
+                <p class="white">You need to login to contribute</p>
+                <a href="../login">Login </a>
+
+                <% } %>
 
             <%- include("../partials/_block") -%>
 

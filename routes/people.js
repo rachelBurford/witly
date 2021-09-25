@@ -2,7 +2,7 @@ import express from 'express';
 import multer from 'multer';
 
 import {
-    createPersonFromController,
+    createPersonFormController,
     createPersonController,
     fetchPeopleController,
     fetchPersonController
@@ -22,7 +22,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 router.get('/', fetchPeopleController)
-router.get('/profile', createPersonFromController)
+router.get('/profile', createPersonFormController)
 router.post('/profile', upload.single('photo'), createPersonController)
 router.get('/profile/:id', fetchPersonController)
 

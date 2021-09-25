@@ -22,7 +22,6 @@ export const fetchPeopleController = async function (req, res) {
             user: user,
             imageData: imageData,
         });
-        console.log(imageData);
     } else {
         res.send('Not authorized.');
     }
@@ -44,8 +43,17 @@ export const fetchPersonController = async function (req, res) {
     res.render('profile', { person: personData, user: user, imageData: imageData, })
 }
 
-export const createPersonFromController = function (req, res) {
-    res.render('newProfile')
+export const createPersonFormController = function (req, res) {
+    let user;
+    if (req.isAuthenticated()) {
+        user = {
+            id: req.user.rows[0].id,
+            username: req.user.rows[0].username,
+        };
+    } else {
+        user = null;
+    }    
+    res.render('newProfile', { user: user, imageData: imageData, })
 }
 
 export const createPersonController = async function (req, res) {

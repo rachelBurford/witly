@@ -3,7 +3,6 @@ import bcrypt, { hash } from 'bcrypt';
 import { pool } from '../db.js';
 
 export const createUser = async function (user) {
-    console.log(user) 
     try {
         let sql = `INSERT INTO users (username, password) VALUES ($1,$2)`;
         let password = user.password;
