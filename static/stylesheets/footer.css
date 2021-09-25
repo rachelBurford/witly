@@ -1,42 +1,11 @@
 #footer-container {
-    position: relative;
-    height: 200px;
-    bottom: 1mm;
-  }
-
-#left-footer{
-      display: grid;
-      grid-template-columns: 1fr 1fr 2fr;
-      position: absolute;
-      bottom: 40px;
-      left: 200px;
-} 
-
-#left-footer img{
-  margin-top: 25px;
-  height: 50px;
-  width: 50px;
-} 
-
-  
-#footer-image {
-    background-position: center;
-    height: 200px;
-    width: 100%;
-    object-fit: cover;
-    position: relative;
-}
-
-#socials-container {
-  position: absolute;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 150px;
+  grid-template-columns: 1fr 1fr 2fr;
   bottom: 40px;
-  right: 200px;
-}
-
-#socials-container img {
-  height: 50px;
-  width: 50px;
+  left: 200px;
+  background-image: url("https://rachelburford.github.io/images/blue_panel.png");    
+  background-position: center;
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
 }

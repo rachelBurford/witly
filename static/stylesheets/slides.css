@@ -1,7 +1,6 @@
 * {box-sizing:border-box}
 
-h3 {
-  float: right;
+.text {
   font-weight: bolder;
   font-family: fantasy;
   font-size: 30px;

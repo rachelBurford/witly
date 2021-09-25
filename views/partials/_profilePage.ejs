@@ -4,20 +4,22 @@
     <h2> </h2>
 
     <div id="primary">
-        <img src="/images/blue_panel.png">
-        <div class = "photo-block">
-            <img id="pp-hero" src="<%= person.photo %>">
-        </div>
-        <div class="float-leftish" class="white">
-            <h1><%= person.name %></h1>
-            <button type="button" id="collapsible">Read more about <%= person.name %></button>
-            <div id="content">
-                <h3><%= person.tagline %></h3>
-                <h4><%= person.bio %></h4>
+        <!-- <img src="/images/blue_panel.png"> -->
+        <div class="test">
+            <div class = "photo-block">
+                <img id="pp-hero" src="<%= person.photo %>">
+            </div>
+            <div class="float-leftish" class="white">
+                <h1><%= person.name %></h1>
+                <details>
+                <summary>Read more about <%= person.name %></summary>
+                <div id="contents">
+                    
+                    <h3><%= person.tagline %></h3>
+                    <h4><%= person.bio %></h4>
+                </div>
+                </details>
             </div>
         </div>
     </div>    
 </div>
-
-
-<script src='collapse.js'></script>

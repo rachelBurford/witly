@@ -1,4 +1,5 @@
 import fs from 'fs';
+import { imageData } from '../fixtures/images.js'
 import FormData from 'form-data';
 import { fetchPerson , fetchPeople, createPerson } from "../api/people.js";
 
@@ -20,6 +21,7 @@ export const fetchPeopleController = async function (req, res) {
         res.render('index', {
             people: peopleData,
             user: user,
+            imageData: imageData,
         });
     } else {
         res.send('Not authorized.');
@@ -29,10 +31,17 @@ export const fetchPeopleController = async function (req, res) {
 
 export const fetchPersonController = async function (req, res) {
     const personId = req.params.id;
+    let user = null;
     const personData = await fetchPerson(personId);
-    console.log(personId);
-    console.log(personData);
-    res.render('profile', { person: personData })
+    if (req.isAuthenticated()) {
+        user = {
+            id: req.user.rows[0].id,
+            username: req.user.rows[0].username,
+        };
+    } else {
+        user = null;
+    }
+    res.render('profile', { person: personData, user:user })
 }
 
 export const createPersonFromController = function (req, res) {
