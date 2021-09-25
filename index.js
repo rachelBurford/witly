@@ -12,9 +12,6 @@ import userRouter from './routes/users.js';
 dotenv.config();
 
 
-import { imageData } from './fixtures/images.js';
-import { userData } from './fixtures/users.js';
-
 const app = express();
 
 app.use(express.urlencoded({ extended: true, limit: '5mb' }));

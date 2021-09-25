@@ -1,6 +1,15 @@
     </div>
     <footer>
         <div id="footer-container">
+                <% imageData.forEach(function(image) { %>
+                    <div id="<%= image.styleId %>">
+                        <h1><%= image.title %></h1>
+                        <a href="<%= image.href %>" target="_blank">
+                        <img src="<%= image.image %>">
+                        </a>                        
+                    </div>
+                <% }); %> 
+        </div>    
     </footer>
 </body>
 </html>

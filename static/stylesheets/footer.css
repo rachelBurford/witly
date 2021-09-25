@@ -1,6 +1,6 @@
 #footer-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   bottom: 40px;
   left: 200px;
   background-image: url("https://rachelburford.github.io/images/blue_panel.png");    
@@ -8,4 +8,30 @@
   height: 200px;
   width: 100%;
   object-fit: cover;
+}
+#item-one {
+  grid-column-start: 2;
+}
+
+#item-one img {
+  height: 50px;
+  width: 50px
+}
+
+#item-two {
+  grid-column-start: 3;
+}
+
+#item-two img {
+  height: 50px;
+  width: 50px
+}
+
+#item-three {
+  grid-column-start: 4;
+}
+
+#item-three img {
+  height: 50px;
+  width: 50px
 }

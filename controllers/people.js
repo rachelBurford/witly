@@ -15,7 +15,6 @@ export const fetchPeopleController = async function (req, res) {
     } else {
         user = null;
     }
-    console.log(req.query);
     const peopleData = await fetchPeople(name);
     if (peopleData) {
         res.render('index', {
@@ -23,6 +22,7 @@ export const fetchPeopleController = async function (req, res) {
             user: user,
             imageData: imageData,
         });
+        console.log(imageData);
     } else {
         res.send('Not authorized.');
     }
@@ -41,7 +41,7 @@ export const fetchPersonController = async function (req, res) {
     } else {
         user = null;
     }
-    res.render('profile', { person: personData, user:user })
+    res.render('profile', { person: personData, user: user, imageData: imageData, })
 }
 
 export const createPersonFromController = function (req, res) {
@@ -50,6 +50,15 @@ export const createPersonFromController = function (req, res) {
 
 export const createPersonController = async function (req, res) {
     let personData = req.body;
+    let user;
+    if (req.isAuthenticated()) {
+        user = {
+            id: req.user.rows[0].id,
+            username: req.user.rows[0].username,
+        };
+    } else {
+        user = null;
+    }
     const form = new FormData();
     form.append('name', personData.name);
     form.append('tagline', personData.tagline);
