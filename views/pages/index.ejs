@@ -7,14 +7,25 @@
             
             <%- include("../partials/_slider") -%>
 
-            <% if (user !== null) { %>
-                <p class="white">You are logged in as <%- user.username %></p> 
-                <a href="../profile">Add to our blog </a>
-                <% } else { %>
-                <p class="white">You need to login to contribute</p>
-                <a href="../login">Login </a>
+            <%- include("../partials/_block") -%>
 
-                <% } %>
+            <div id="warning-text-box">
+
+            <% if (user !== null) { %>
+                <div id="verified">
+                <a class="btn info" href="../profile"> <%- user.username %> Click to contribute </a>
+                </div>
+                <% } else { %>
+                <div id="unverified">
+                <a class="btn info" href="../login">Login to contribute </a>
+                </div>
+            <% } %>
+
+            </div>
+
+            <%- include("../partials/_block") -%>
+
+            <%- include("../partials/_extra") -%>
 
             <%- include("../partials/_block") -%>
 

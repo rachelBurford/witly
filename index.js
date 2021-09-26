@@ -8,6 +8,7 @@ import dotenv from 'dotenv';
 import { pool } from './db.js';
 import peopleRouter from './routes/people.js';
 import userRouter from './routes/users.js';
+import { imageData } from './fixtures/images.js';
 
 dotenv.config();
 
@@ -85,38 +86,18 @@ app.listen(process.env.PORT || 3000, () => {
 app.use('/', peopleRouter)
 app.use('/', userRouter)
 
-// app.get('/', (req, res) => {
-//     // res.send('Hello, world!')
-//     console.log(peopleData);
-//     res.render('index', { people: peopleData });
-// });
+app.get('/images/:id',(req,res) => {
+    let imageId = req.params.id;
+    let data;
+    imageData.every((dataData) => {
+        if (dataData.id == imageId) {
+            data = dataData;
+            return false;
+        }
+    });
+    res.render('images', { data: data});
 
-// app.get('/profile/:id', (req,res) => {
-//     let personId = req.params.id;
-//     let person;
-//     peopleData.forEach((personData) => {
-//         if (personData.id == personId) {
-//             person = personData;
-//         }
-//     })
-//     console.log(person);
-//     res.render('profile', { person: person});
-
-// });
-
-
-// app.get('/images/:id',(req,res) => {
-//     let imageId = req.params.id;
-//     let data;
-//     imageData.every((dataData) => {
-//         if (dataData.id == imageId) {
-//             data = dataData;
-//             return false;
-//         }
-//     });
-//     res.render('images', { data: data});
-
-// });
+});
 
 // app.get('/login/:id', (req, res) => {
 //     let userId = req.params.id;
