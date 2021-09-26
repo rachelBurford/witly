@@ -11,27 +11,36 @@
 }
 #item-one {
   grid-column-start: 2;
+  padding-top: 30px;
+  text-align: center;
+  align-self: baseline;
 }
 
 #item-one img {
   height: 50px;
-  width: 50px
+  width: 50px;
 }
 
 #item-two {
   grid-column-start: 3;
+  padding-top: 30px;
+  text-align: center;
+  align-self: baseline;
 }
 
 #item-two img {
   height: 50px;
-  width: 50px
+  width: 50px;
 }
 
 #item-three {
   grid-column-start: 4;
+  padding-top: 30px;
+  text-align: center;
+  align-self: baseline;
 }
 
 #item-three img {
   height: 50px;
-  width: 50px
+  width: 50px;
 }

@@ -52,3 +52,14 @@ export const createPerson = async function(formData) {
     });
     return response.json();
 }
+
+export const updatePerson = async function(formData) {
+    const response = await fetch(`${API_URL}people/${personId}`, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            Authorization: `Token ${API_KEY}`, 
+        }
+    });
+    return response.json();
+}

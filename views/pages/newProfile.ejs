@@ -1,15 +1,28 @@
 <%- include("../partials/_head") -%>
 
 <h1>Create a new profile</h1>
-
+<div id="creator">
 <form action="/profile" method="POST" enctype="multipart/form-data">
-    <input name="name" type="text" />
-    <input name="tagline" type="text" />
-    <textarea name="bio"></textarea>
-    <input name="photo" type="file" />
-    <input type="submit" value="Create" />
+    <div>
+        <label>Username</label>
+        <input class="input2" name="name" type="text" />
+    </div>
+    <div>
+        <label>Tagline</label>    
+        <input class="input2" name="tagline" type="text" />
+    </div>
+    <div>
+        <label>Bio</label>  
+        <textarea class="input2" name="bio"></textarea>
+    </div>
+    <div>
+        <label>Upload a Photo</label>      
+        <input class="input2" name="photo" type="file" />
+    </div>
+    <div>  
+        <input class="btn info submit" type="submit" value="Create" />
+    </div>
 </form>
-
 </div>
-</body>
-</html>
+
+<%- include("../partials/_footer") -%>

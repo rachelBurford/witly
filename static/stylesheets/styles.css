@@ -2,6 +2,7 @@
 @import "nav.css";
 @import "footer.css";
 @import "heroText.css";
+@import "forms.css";
 
 html {
     background-color: black;
@@ -69,13 +70,7 @@ h1, h2, h3 p {
   transform: translate(-50%, -50%);
   color: aliceblue;
 }
-.float-left {
-  position: absolute;
-  top: 50%;
-  right: 50%;
-  transform: translate(-50%, -50%);
-  color: aliceblue;
-}
+
 
 #wasteland {
     position: inherit;
@@ -88,11 +83,7 @@ h1, h2, h3 p {
   color: aliceblue;
 }
 
-form {
-  display: flex;
-  color: beige;
-  width: 500px;
-}
+
 
 .test {
   display: grid;
@@ -200,3 +191,4 @@ form {
 #unverified {
   grid-column-start: 4;
 }
+
