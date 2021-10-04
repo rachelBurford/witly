@@ -47,12 +47,23 @@ input:focus {
 
 #need {
     padding-top: 50px;
+
 }
 
 #needAccount {
     padding-top: 50px;
+    background-color: rgb(57, 89, 102);
 }
 
 #creator { 
     background-image: url("https://rachelburford.github.io/images/dark_panel.png");
+}
+
+#signin {
+    background-color: rgb(57, 89, 102);
+}
+
+.signup {
+    position: relative;
+    top: -25px;
 }

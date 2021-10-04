@@ -4,10 +4,7 @@
     <p class="white">You are logged in</p> 
     <a href="../profile">Add to our blog </a>
     <% } else { %>
-            <details>
-                <summary>
-                    <h1>Login</h1>   
-                </summary>
+                <h1>Login</h1>   
                 <div id="signin">
                     <form action="/login" method="post">
                         <div>
@@ -22,17 +19,12 @@
                             <input class="btn info submit" type="submit" name="Login" />
                         </div>
                     </form>
-                </div>
-            </details>      
+                </div> 
         <div id="need">
-            <details>
-                <summary>
-                    <h1>Need an account?</h1>  
-                </summary>
+                <h1>Need an account?</h1>  
                 <div id='needAccount'>
                     <a class="btn info signup" href="../create-Account">Sign Up!</a>
-                </div>
-            </details>          
+                </div>       
         </div>
 <% } %>
 
