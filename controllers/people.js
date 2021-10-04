@@ -82,7 +82,7 @@ export const createPersonController = async function (req, res) {
     }
     if (newPerson) {
         console.log(newPerson)
-            res.render('profile', { person: newPerson });
+            res.render('profile', { person: newPerson, user: user, imageData: imageData });
     } else {
             res.send('Error.');
     }
@@ -90,7 +90,7 @@ export const createPersonController = async function (req, res) {
 
 export const updatePersonController = async function (req, res) {
     let personData = req.body;
-    cons.log(personData);
+    console.log("hi" + personData)
     let user;
     if (req.isAuthenticated()) {
         user = {
@@ -115,7 +115,7 @@ export const updatePersonController = async function (req, res) {
     }
     if (newPerson) {
         console.log(newPerson)
-            res.render('profile', { person: newPerson });
+            res.render('profile', { person: newPerson, user: user, imageData: imageData });
     } else {
             res.send('Error.');
     }

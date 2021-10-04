@@ -26,6 +26,6 @@ router.get('/', fetchPeopleController)
 router.get('/profile', createPersonFormController)
 router.post('/profile', upload.single('photo'), createPersonController)
 router.get('/profile/:id', fetchPersonController)
-router.post('/profile/:id', updatePersonController)
+router.put('/profile/:id', updatePersonController)
 
 export default router;

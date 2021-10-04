@@ -23,23 +23,22 @@
         </div>
     </div>    
 </div>
-    <% if (user === null) { %>
-        <p class="white">You are logged in as <%- user.username %></p>
-        <details>
-            <summary>
-                <h1>Edit content</h1>
-            </summary>
-            <form action="/profile/<%= person.id %>" method="POST" enctype="multipart/form-data">
-                <input name="name" value="<%= person.name %>" type="text" />
-                <input name="tagline" value=" <%= person.tagline %> " type="text" />
-                <textarea name="bio"><%= person.bio %></textarea>
-                <input name="photo"  src="<%= person.bio %>" type="file" />
-                <input type="submit" value="Update" />
-            </form>
-        </details> 
-        <% } else { %>
-        <p class="white">You need to login to edit content </p>
-        <button class="btn info submit" href="../login/">Login</button>
-        <% } %>
-        
-        <!-- //send post request to profile/id -->
+
+<% if (user === null) { %>
+    <p class="white">You need to login to edit content </p>
+    <button class="btn info submit" href="../login/">Login</button>
+    <% } else { %>
+    <p class="white">You are logged in as <%- user.username %></p>
+    <details>
+        <summary>
+            <h1>Edit content</h1>
+        </summary>
+        <form action="/profile/<%= person.id %>" method="POST" enctype="multipart/form-data">
+            <input name="name" value="<%= person.name %>" type="text" />
+            <input name="tagline" value=" <%= person.tagline %> " type="text" />
+            <textarea name="bio"><%= person.bio %></textarea>
+            <input name="photo"  src="<%= person.bio %>" type="file" />
+            <input type="submit" value="Update" />
+        </form>
+    </details> 
+    <% } %>
